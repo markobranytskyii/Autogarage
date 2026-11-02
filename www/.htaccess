@@ -1,1 +1,6 @@
 ErrorDocument 404 /404.php
+
+# Het bestand .env (met databasewachtwoorden) mag nooit via de browser te openen zijn
+<Files ".env">
+    Require all denied
+</Files>

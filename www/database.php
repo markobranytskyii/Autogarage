@@ -1,6 +1,14 @@
 <?php
 
-// Databaseverbinding. De gegevens komen uit .env (via docker-compose), niet uit de code.
+// Databaseverbinding. De gegevens komen uit .env, niet uit de code.
+// Met Docker zet docker-compose ze als omgevingsvariabelen klaar.
+// Op gewone webhosting (zonder Docker) lezen we ze uit het bestand www/.env.
+if (!getenv('MYSQL_DATABASE') && file_exists(__DIR__ . '/.env')) {
+    foreach (parse_ini_file(__DIR__ . '/.env', false, INI_SCANNER_RAW) as $naam => $waarde) {
+        putenv("$naam=$waarde");
+    }
+}
+
 $dbhost = getenv('MYSQL_HOST') ?: 'mariadb';
 $dbname = getenv('MYSQL_DATABASE');
 $dbuser = getenv('MYSQL_USER');
