@@ -6,6 +6,16 @@ Gebouwd met PHP, MySQL (MariaDB) en PDO, zonder framework, en volledig te starte
 
 ![Homepagina](screenshots/home.png)
 
+## Inloggegevens (testaccounts)
+
+Na het starten (zie [Starten](#starten)) kun je met deze accounts inloggen op http://localhost/login.php:
+
+| Rol | E-mailadres | Wachtwoord |
+|---|---|---|
+| Klant | `klant@sleutelwerk.nl` | `Klant123!` |
+| Medewerker | `medewerker@sleutelwerk.nl` | `Medewerker123!` |
+| Admin | `admin@sleutelwerk.nl` | `Admin123!` |
+
 ## Functies
 
 **Bezoeker**
@@ -72,7 +82,7 @@ cp .env.example .env
 docker compose up
 ```
 
-Bij de eerste start maakt MariaDB automatisch alle tabellen en testdata aan (uit [`SQL/init.sql`](SQL/init.sql)).
+Bij de eerste start maakt MariaDB automatisch alle tabellen en testdata aan (uit [`SQL/init.sql`](SQL/init.sql)), inclusief de [testaccounts](#inloggegevens-testaccounts).
 
 | Applicatie | Adres |
 |---|---|
@@ -80,14 +90,6 @@ Bij de eerste start maakt MariaDB automatisch alle tabellen en testdata aan (uit
 | phpMyAdmin | http://localhost:8000 |
 
 Wil je de database opnieuw vullen met de testdata? Gebruik `docker compose down -v` en daarna weer `docker compose up`.
-
-## Testaccounts
-
-| Rol | E-mailadres | Wachtwoord |
-|---|---|---|
-| Klant | `klant@sleutelwerk.nl` | `Klant123!` |
-| Medewerker | `medewerker@sleutelwerk.nl` | `Medewerker123!` |
-| Admin | `admin@sleutelwerk.nl` | `Admin123!` |
 
 ## Projectstructuur
 
