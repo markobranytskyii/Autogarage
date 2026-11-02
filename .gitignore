@@ -1,0 +1,14 @@
+# Omgevingsvariabelen met wachtwoorden (gebruik .env.example als voorbeeld)
+.env
+
+# Composer-pakketten
+vendor/
+
+# Editor- en systeembestanden
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logbestanden
+*.log
